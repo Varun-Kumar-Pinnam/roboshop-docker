@@ -7,4 +7,4 @@ networks:
   default:
     driver: bridge
     name: roboshop
-    extrenal: false
+    external: false
