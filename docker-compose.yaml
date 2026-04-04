@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    build: ./mongodb
+    image: varunkumarpinnam/mongodb:1.0.0
+    contianer_name: mongodb
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    extrenal: false
