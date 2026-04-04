@@ -12,24 +12,24 @@ services:
     - mongodb
 
   user:
-  build: ./user
-  image: varunkumarpinnam/user:1.0.0
-  container_name: user
-  depends_on:
-  - mongodb
-  - redis
+    build: ./user
+    image: varunkumarpinnam/user:1.0.0
+    container_name: user
+    depends_on:
+    - mongodb
+    - redis
 
   redis:
     image: redis:7.0
     container_name: redis
 
   cart:
-  build: ./cart
-  image: varunkumarpinnam/cart:1.0.0
-  container_name: cart
-  depends_on:
-  - catalogue
-  - redis
+    build: ./cart
+    image: varunkumarpinnam/cart:1.0.0
+    container_name: cart
+    depends_on:
+    - catalogue
+    - redis
 
 networks:
   default:
