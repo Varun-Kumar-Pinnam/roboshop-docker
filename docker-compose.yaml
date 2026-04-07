@@ -1,21 +1,21 @@
 services:
   mongodb:
     build: ./mongodb
-    image: varunkumarpinnam/mongodb:1.0.0
+    image: varunkumarpinnam/mongodb:1.2.0
     container_name: mongodb
     volumes:
     - mongodb:/data/db
 
   catalogue:
     build: ./catalogue
-    image: varunkumarpinnam/catalogue:1.0.0
+    image: varunkumarpinnam/catalogue:1.2.0
     container_name: catalogue
     depends_on:
     - mongodb
 
   user:
     build: ./user
-    image: varunkumarpinnam/user:1.0.0
+    image: varunkumarpinnam/user:1.2.0
     container_name: user
     depends_on:
     - mongodb
@@ -29,7 +29,7 @@ services:
 
   cart:
     build: ./cart
-    image: varunkumarpinnam/cart:1.0.0
+    image: varunkumarpinnam/cart:1.2.0
     container_name: cart
     depends_on:
     - catalogue
@@ -57,7 +57,7 @@ services:
 
   shipping:
     build: ./shipping
-    image: varunkumarpinnam/shipping:1.0.0
+    image: varunkumarpinnam/shipping:1.2.0
     container_name: shipping
     depends_on:
     - cart
@@ -74,7 +74,7 @@ services:
   
   payment:
     build: ./payment
-    image: varunkumarpinnam/payment:1.0.0
+    image: varunkumarpinnam/payment:1.2.0
     container_name: payment
     environment:
       CART_HOST: "cart"
